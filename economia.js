@@ -21,7 +21,7 @@ function getNuevoSaldo(newVp, totalAbono) {
 }
 
 function getDisminucionTiempo(nuevoSaldo, cuota, i, mes) {
-    console.log('mes-->', mes)
+    // console.log('mes-->', mes)
     var division = ((nuevoSaldo / cuota) * i) - 1;
     // console.log('nuevo valor -->', nuevoSaldo)
     var potencia = -(1 + i);
@@ -37,7 +37,7 @@ function getMesesPorPagar(n, mes, cuota = true) {
 
 /* mock datos de entrda */
 var datosPrimariosEntrada = {
-    'I': 15,
+    'I': 1.5,
     'TipoI': 'Nominal',
     'vP': 28000000,
     'n': 72,
@@ -81,9 +81,13 @@ abono.forEach(function (element, index) {
         datosPrimariosEntrada.vP = nuevoSaldo;
 
     } else if (element.cuota == false) {
-        datosPrimariosEntrada.n = getDisminucionTiempo(nuevoSaldo, cuota, i, element.mes)
-        console.log('getDisminucionTiempo--->', getDisminucionTiempo(nuevoSaldo, cuota, i, element.mes))
+        datosPrimariosEntrada.n = Math.abs(getDisminucionTiempo(nuevoSaldo, cuota, i, element.mes))
+        console.log(datosPrimariosEntrada.n)
     }
+    console.log('fin iteracion------------------------------------------>');
+    // if (index == 1) {
+    //     throw new Error("my error message");
+    // }
 
 });
 
