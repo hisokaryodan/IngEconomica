@@ -1,10 +1,184 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--<meta charset="UTF-8">-->
+<!--<title>Title</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<script type="text/javascript" src="tasas.js"></script>-->
+<!--<script type="text/javascript" src="economia.js"></script>-->
+<!--</body>-->
+<!--</html>-->
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
+    <meta charset="utf-8">
+    <title>Formulario</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+    <meta name="theme-color" content="#009A3B">
+    <script type="text/javascript" src="tasas.js"></script>
+    <script type="text/javascript" src="economia.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Roboto');
+
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #06E191;
+            font-family: 'Roboto', sans-serif;
+            font-size: 14px;
+        }
+
+        ::-webkit-input-placeholder {
+            color: #a9a9a9;
+        }
+
+        :-ms-input-placeholder {
+            color: #a9a9a9;
+        }
+
+        ::placeholder {
+            color: #a9a9a9;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container form {
+            background-color: #323642;
+            max-width: 500px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 30px;
+        }
+
+        form h1 {
+            color: #fff;
+            font-size: 20px;
+            text-align: center;
+        }
+
+        form h2 {
+            color: #fff;
+            font-size: 15px;
+            text-align: left;
+        }
+
+        form img {
+            width: 200px;
+            height: auto;
+            margin: 10px auto 30px auto;
+            display: block;
+        }
+
+        form input,
+        form select {
+            width: 100%;
+            padding: 5px 10px;
+            height: 40px;
+            border-radius: 4px;
+            background: #454A55;
+            color: #fff;
+        }
+
+        form fieldset {
+            margin-bottom: 15px;
+        }
+
+        form button {
+            width: 100%;
+            height: 50px;
+            line-height: 50px;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 16px;
+            background: #06E191;
+        }
+
+        @media only screen and (max-width: 720px) {
+            .container {
+                display: block;
+                padding: 0 10px;
+            }
+
+            .container form {
+                margin: 40px 0;
+                padding: 20px;
+            }
+        }
+    </style>
+
 <body>
-<script type="text/javascript" src="economia.js"></script>
+
+<div class="container">
+    <form action="" onsubmit="indexFunction()">
+        <h1>Convertir Tasa</h1>
+        <img src="https://image.flaticon.com/icons/svg/1340/1340531.svg" alt="">
+        <h2>Tasa</h2>
+        <fieldset>
+            <input type="number" id="tasaEntrada" placeholder="Tasa">
+        </fieldset>
+        <fieldset>
+            <select name="tasaOrigen" id="tasaOrigen">
+                <option value="Nominal">Nominal</option>
+                <option value="Efectiva">Efectiva</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select name="tiempoOrigen" id="tiempoOrigen">
+                <option value="12">Mensual</option>
+                <option value="6">Bimestral</option>
+                <option value="4">Trimestral</option>
+                <option value="2">Semestral</option>
+                <option value="1">Anual</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select name="antVenOrigen" id="antVenOrigen">
+                <option value="Anticipada">Anticipada</option>
+                <option value="Vencida">Vencida</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select name="tasaDestino" id="tasaDestino">
+                <option value="Nominal">Nominal</option>
+                <option value="Efectiva">Efectiva</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select name="tiempoDestino" id="tiempoDestino">
+                <option value="12">Mensual</option>
+                <option value="6">Bimestral</option>
+                <option value="4">Trimestral</option>
+                <option value="2">Semestral</option>
+                <option value="1">Anual</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <select name="antVenDestino" id="antVenDestino">
+                <option value="Anticipada">Anticipada</option>
+                <option value="Vencida">Vencida</option>
+            </select>
+        </fieldset>
+        <fieldset>
+            <button type="submit" id="submit">Convertir</button>
+        </fieldset>
+    </form>
+</div>
+
 </body>
 </html>

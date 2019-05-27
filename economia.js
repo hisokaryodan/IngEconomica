@@ -32,13 +32,20 @@ function getDisminucionTiempo(nuevoSaldo, cuota, i, mes) {
 }
 
 function getMesesPorPagar(n, mes, cuota = true) {
-    return cuota === false ? n - (mes - 1) : n - mes;
+    // if (cuota === false) {
+    //     console.log('if')
+    //     return n - (mes - 1)
+    // } else {
+    //     console.log('else')
+    //     return n - mes
+    // }
+    return cuota == false ? n - (mes - 1) : n - mes;
 }
 
 /* mock datos de entrda */
 var datosPrimariosEntrada = {
     'I': 1.5,
-    'TipoI': 'Nominal',
+    // 'TipoI': 'Nominal',
     'vP': 28000000,
     'n': 72,
 };
@@ -67,22 +74,28 @@ abono.forEach(function (element, index) {
     console.log('element---->', element);
     console.log('datosPrimariosEntrada--->', datosPrimariosEntrada);
 
+    console.log('valores calcular cuota--->', datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i)
     var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
-    var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes);
+    console.log('cuota--->', cuota)
+    var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes, element.cuota);
+    console.log('MesesPorPagar---->', N);
     var newVp = getCalcularValorPresente(cuota, i, N);
     console.log('newVp--->', newVp);
     var totalAbono = getTotalAbono(element.abono, i, newVp);
+    console.log('totalAbono-->', totalAbono)
     var nuevoSaldo = getNuevoSaldo(newVp, totalAbono);
+    console.log('nuevoSaldo-->', nuevoSaldo)
 
-    if (element.cuota == true) {
+    if (element.cuota === true) {
         console.log('n--->', datosPrimariosEntrada.n)
         var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes, true);
-        console.log(getCalcularCuota(nuevoSaldo, N, i));
+        console.log('N--->', N)
+        console.log('getCalcularCuota--->', getCalcularCuota(nuevoSaldo, N, i));
         datosPrimariosEntrada.vP = nuevoSaldo;
 
-    } else if (element.cuota == false) {
+    } else if (element.cuota === false) {
         datosPrimariosEntrada.n = Math.abs(getDisminucionTiempo(nuevoSaldo, cuota, i, element.mes))
-        console.log(datosPrimariosEntrada.n)
+        console.log('datosPrimariosEntrada.n---->', datosPrimariosEntrada.n)
     }
     console.log('fin iteracion------------------------------------------>');
     // if (index == 1) {
