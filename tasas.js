@@ -15,6 +15,31 @@ function indexFunction() {
     // console.log('tasa origen-->', tasaOrigen)
 
 
+    /* mock datos de entrada */
+    var datosPrimariosEntrada = {
+        // 'I': 1.5,
+        'vP': document.getElementById('vP').value,
+        'n': document.getElementById('n').value,
+    };
+
+    var abono = [];
+    abono[0] = {
+        'abono': document.getElementById('abono1').value,
+        'mes': document.getElementById('mesAbono1').value,
+        'cuota': document.getElementById('capitalTiempo1').value
+    };
+    abono[1] = {
+        'abono': document.getElementById('abono2').value,
+        'mes': document.getElementById('mesAbono2').value,
+        'cuota': document.getElementById('capitalTiempo2').value
+    };
+    abono[2] = {
+        'abono': document.getElementById('abono3').value,
+        'mes': document.getElementById('mesAbono3').value,
+        'cuota': document.getElementById('capitalTiempo3').value
+    };
+
+
 // tasa interes
     var tasainteres = tasaInteres(tasa);
     var valor = 0;
@@ -96,4 +121,7 @@ function indexFunction() {
             // console.log("La tasa convertida es: " + valor + "% Efectiva" + tiempodestino + "");
         }
     }
+    // return valor
+    console.log('la tasa ---->', valor)
+    coreAbonos(valor, datosPrimariosEntrada, abono)
 }

@@ -1,14 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--<meta charset="UTF-8">-->
-<!--<title>Title</title>-->
-<!--</head>-->
-<!--<body>-->
-<!--<script type="text/javascript" src="tasas.js"></script>-->
-<!--<script type="text/javascript" src="economia.js"></script>-->
-<!--</body>-->
-<!--</html>-->
 <!doctype html>
 <html lang="es">
 <head>
@@ -130,7 +119,7 @@
         <img src="https://image.flaticon.com/icons/svg/1340/1340531.svg" alt="">
         <h2>Tasa</h2>
         <fieldset>
-            <input type="number" id="tasaEntrada" placeholder="Tasa">
+            <input type="number" step="any" id="tasaEntrada" placeholder="Tasa">
         </fieldset>
         <fieldset>
             <select name="tasaOrigen" id="tasaOrigen">
@@ -155,29 +144,79 @@
         </fieldset>
         <fieldset>
             <select name="tasaDestino" id="tasaDestino">
-                <option value="Nominal">Nominal</option>
+                <!--<option value="Nominal">Nominal</option>-->
                 <option value="Efectiva">Efectiva</option>
             </select>
         </fieldset>
         <fieldset>
             <select name="tiempoDestino" id="tiempoDestino">
                 <option value="12">Mensual</option>
-                <option value="6">Bimestral</option>
-                <option value="4">Trimestral</option>
-                <option value="2">Semestral</option>
-                <option value="1">Anual</option>
+                <!--<option value="6">Bimestral</option>-->
+                <!--<option value="4">Trimestral</option>-->
+                <!--<option value="2">Semestral</option>-->
+                <!--<option value="1">Anual</option>-->
             </select>
         </fieldset>
         <fieldset>
             <select name="antVenDestino" id="antVenDestino">
-                <option value="Anticipada">Anticipada</option>
+                <!--<option value="Anticipada">Anticipada</option>-->
                 <option value="Vencida">Vencida</option>
+            </select>
+        </fieldset>
+        <h2>Valor deuda </h2>
+        <fieldset>
+            <input type="number" id="vP" placeholder="Valor Deuda">
+        </fieldset>
+        <h2>Meses Deuda</h2>
+        <fieldset>
+            <input type="number" id="n" placeholder="meses de deuda">
+        </fieldset>
+        <h2>Abono 1</h2>
+        <fieldset>
+            <input type="number" id="abono1" placeholder="Abono">
+        </fieldset>
+        <fieldset>
+            <input type="number" id="mesAbono1" placeholder=" Mes abono">
+        </fieldset>
+        <fieldset>
+            <select name="capitalTiempo1" id="capitalTiempo1">
+                <option value="false">Tiempo</option>
+                <option value="true">Cuota</option>
+            </select>
+        </fieldset>
+        <h2>Abono 2</h2>
+        <fieldset>
+            <input type="number" id="abono2" placeholder="Abono">
+        </fieldset>
+        <fieldset>
+            <input type="number" id="mesAbono2" placeholder=" Mes abono">
+        </fieldset>
+        <fieldset>
+            <select name="capitalTiempo2" id="capitalTiempo2">
+                <option value="false">Tiempo</option>
+                <option value="true">Cuota</option>
+            </select>
+        </fieldset>
+        <h2>Abono 3</h2>
+        <fieldset>
+            <input type="number" id="abono3" placeholder="Abono">
+        </fieldset>
+        <fieldset>
+            <input type="number" id="mesAbono3" placeholder=" Mes abono">
+        </fieldset>
+        <fieldset>
+            <select name="capitalTiempo3" id="capitalTiempo3">
+                <option value="false">Tiempo</option>
+                <option value="true">Cuota</option>
             </select>
         </fieldset>
         <fieldset>
             <button type="submit" id="submit">Convertir</button>
         </fieldset>
     </form>
+    <div><p>some dynamic html</p></div>
+    <!--var node = document.getElementById('node-id'); -->
+    <!--node.innerHTML('<p>some dynamic html</p>');-->
 </div>
 
 </body>
