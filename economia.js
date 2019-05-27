@@ -68,6 +68,7 @@ abono[2] = {
 };
 
 var i = dividirTasa(datosPrimariosEntrada.I);// valor obtenido codigo brayan solo se simula division
+var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
 
 abono.forEach(function (element, index) {
     console.log('index---->', index);
@@ -75,7 +76,7 @@ abono.forEach(function (element, index) {
     console.log('datosPrimariosEntrada--->', datosPrimariosEntrada);
 
     console.log('valores calcular cuota--->', datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i)
-    var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
+    // var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
     console.log('cuota--->', cuota)
     var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes, element.cuota);
     console.log('MesesPorPagar---->', N);
@@ -90,12 +91,15 @@ abono.forEach(function (element, index) {
         console.log('n--->', datosPrimariosEntrada.n)
         var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes, true);
         console.log('N--->', N)
-        console.log('getCalcularCuota--->', getCalcularCuota(nuevoSaldo, N, i));
+        console.log('data de getCalcularCuota--->', nuevoSaldo, N, i)
+        cuota = getCalcularCuota(nuevoSaldo, N, i)
+        console.log('getCalcularCuota--->', cuota);
         datosPrimariosEntrada.vP = nuevoSaldo;
 
     } else if (element.cuota === false) {
         datosPrimariosEntrada.n = Math.abs(getDisminucionTiempo(nuevoSaldo, cuota, i, element.mes))
         console.log('datosPrimariosEntrada.n---->', datosPrimariosEntrada.n)
+        datosPrimariosEntrada.vP = nuevoSaldo;
     }
     console.log('fin iteracion------------------------------------------>');
     // if (index == 1) {
