@@ -33,7 +33,7 @@ function getMesesPorPagar(n, mes, cuota = true) {
     return cuota == false ? n - (mes - 1) : n - mes;
 }
 
-function coreAbonos(i, datosPrimariosEntrada, abono ) {
+function coreAbonos(i, datosPrimariosEntrada, abono) {
     var i = dividirTasa(i);// valor obtenido codigo brayan solo se simula division
     var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
 
@@ -42,9 +42,10 @@ function coreAbonos(i, datosPrimariosEntrada, abono ) {
         console.log('element---->', element);
         console.log('datosPrimariosEntrada--->', datosPrimariosEntrada);
 
-        console.log('valores calcular cuota--->', datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i)
+        // console.log('valores calcular cuota--->', datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i)
         // var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
-        console.log('cuota--->', cuota)
+        console.log('cuota--->', cuota);
+        (element.cuota === "true") ? element.cuota = true : false;
         var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes, element.cuota);
         console.log('MesesPorPagar---->', N);
         var newVp = getCalcularValorPresente(cuota, i, N);
@@ -69,5 +70,18 @@ function coreAbonos(i, datosPrimariosEntrada, abono ) {
             datosPrimariosEntrada.vP = nuevoSaldo;
         }
         console.log('fin iteracion------------------------------------------>');
+        // var elementId = 'resultValor' + index + 1
+        var suma = parseInt(index) + parseInt(1)
+        var valorId = "resultValor" + suma
+        console.log(valorId)
+        var cuotaId = "resultCuota" + suma
+        // var node = document.getElementById('resultValor1').innerHTML = '<p>' + datosPrimariosEntrada.vP + '</p>';
+        document.getElementById(valorId).innerHTML = '<p> Valor Presente con abono numero ' + suma + ' $' + nuevoSaldo + '</p>';
+        document.getElementById(cuotaId).innerHTML = '<p> Valor de la Cuota con abono numero ' + suma + ' $' + cuota + '</p>';
+        // document.getElementById('resultValor2').innerHTML = '<p> Valor Presente $' + datosPrimariosEntrada.vP + '</p>';
+        // document.getElementById('resultCuota2').innerHTML = '<p> Valor cuota $' + datosPrimariosEntrada.vP + '</p>';
+        // document.getElementById('resultValor3').innerHTML = '<p> Valor Presente $' + datosPrimariosEntrada.vP + '</p>';
+        // document.getElementById('resultCuota3').innerHTML = '<p> Valor cuota $' + datosPrimariosEntrada.vP + '</p>';
+        // node.innerHTML('<p>' + datosPrimariosEntrada.vP + '</p>');
     });
 }
