@@ -45,7 +45,7 @@ function coreAbonos(i, datosPrimariosEntrada, abono) {
         // console.log('valores calcular cuota--->', datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i)
         // var cuota = getCalcularCuota(datosPrimariosEntrada.vP, datosPrimariosEntrada.n, i);
         console.log('cuota--->', cuota);
-        (element.cuota === "true") ? element.cuota = true : false;
+        (element.cuota === "true") ? element.cuota = true : element.cuota = false;
         var N = getMesesPorPagar(datosPrimariosEntrada.n, element.mes, element.cuota);
         console.log('MesesPorPagar---->', N);
         var newVp = getCalcularValorPresente(cuota, i, N);
@@ -65,6 +65,7 @@ function coreAbonos(i, datosPrimariosEntrada, abono) {
             datosPrimariosEntrada.vP = nuevoSaldo;
 
         } else if (element.cuota === false) {
+            // console.log('tomalo')
             datosPrimariosEntrada.n = Math.abs(getDisminucionTiempo(nuevoSaldo, cuota, i, element.mes))
             console.log('datosPrimariosEntrada.n---->', datosPrimariosEntrada.n)
             datosPrimariosEntrada.vP = nuevoSaldo;
