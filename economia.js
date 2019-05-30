@@ -75,13 +75,7 @@ function coreAbonos(i, datosPrimariosEntrada, abono) {
         var valorId = "resultValor" + suma
         console.log(valorId)
         var cuotaId = "resultCuota" + suma
-        // var node = document.getElementById('resultValor1').innerHTML = '<p>' + datosPrimariosEntrada.vP + '</p>';
-        document.getElementById(valorId).innerHTML = '<p> Valor Presente con abono numero ' + suma + ' $' + nuevoSaldo + '</p>';
-        document.getElementById(cuotaId).innerHTML = '<p> Valor de la Cuota con abono numero ' + suma + ' $' + cuota + '</p>';
-        // document.getElementById('resultValor2').innerHTML = '<p> Valor Presente $' + datosPrimariosEntrada.vP + '</p>';
-        // document.getElementById('resultCuota2').innerHTML = '<p> Valor cuota $' + datosPrimariosEntrada.vP + '</p>';
-        // document.getElementById('resultValor3').innerHTML = '<p> Valor Presente $' + datosPrimariosEntrada.vP + '</p>';
-        // document.getElementById('resultCuota3').innerHTML = '<p> Valor cuota $' + datosPrimariosEntrada.vP + '</p>';
-        // node.innerHTML('<p>' + datosPrimariosEntrada.vP + '</p>');
+        document.getElementById(valorId).innerHTML = '<h2><p> Valor Presente con abono numero' + suma + ' $' + nuevoSaldo + '</p></h2>';
+        document.getElementById(cuotaId).innerHTML = '<h2><p> Valor de la Cuota con abono numero' + suma + ' $' + cuota + '</p></h2>';
     });
 }

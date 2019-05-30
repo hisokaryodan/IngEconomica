@@ -108,6 +108,11 @@
                 margin: 40px 0;
                 padding: 20px;
             }
+            .midiv{
+                color: #fff;
+                font-size: 15px;
+                text-align: left;
+            }
         }
     </style>
 
@@ -115,7 +120,7 @@
 
 <div class="container">
     <form action="" onsubmit="indexFunction()">
-        <h1>Convertir Tasa</h1>
+        <h1>Calculador de Abonos</h1>
         <img src="https://image.flaticon.com/icons/svg/1340/1340531.svg" alt="">
         <h2>Tasa</h2>
         <fieldset>
@@ -210,26 +215,42 @@
                 <option value="true">Cuota</option>
             </select>
         </fieldset>
+        <h2>Abono 4</h2>
+        <fieldset>
+            <input type="number" id="abono4" placeholder="Abono">
+        </fieldset>
+        <fieldset>
+            <input type="number" id="mesAbono4" placeholder=" Mes abono">
+        </fieldset>
+        <fieldset>
+            <select name="capitalTiempo3" id="capitalTiempo4">
+                <option value="false">Tiempo</option>
+                <option value="true">Cuota</option>
+            </select>
+        </fieldset>
         <fieldset>
             <button type="submit" id="submit">Convertir</button>
         </fieldset>
     </form>
-    <div id="resultValor1"></div>
-    <div id="resultCuota1"></div>
-    <div id="resultValor2"></div>
-    <div id="resultCuota2"></div>
-    <div id="resultValor3"></div>
-    <div id="resultCuota3"></div>
-    <div id="resultValor4"></div>
-    <div id="resultCuota4">
+    <form>
+
+        <div id="resultValor1" class="midiv"></div>
+        <div id="resultCuota1" class="midiv"></div>
         <br>
+        <div id="resultValor2" class="midiv"></div>
+        <div id="resultCuota2" class="midiv"></div>
         <br>
+        <div id="resultValor3" class="midiv"></div>
+        <div id="resultCuota3" class="midiv"></div>
         <br>
+        <div id="resultValor4" class="midiv"></div>
+        <div id="resultCuota4" class="midiv"></div>
         <br>
-        <br>
-        <!--var node = document.getElementById('node-id'); -->
-        <!--node.innerHTML('<p>some dynamic html</p>');-->
-    </div>
+
+    </form>
+    <!--var node = document.getElementById('node-id'); -->
+    <!--node.innerHTML('<p>some dynamic html</p>');-->
+</div>
 
 </body>
 </html>

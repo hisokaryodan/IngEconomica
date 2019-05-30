@@ -38,6 +38,11 @@ function indexFunction() {
         'mes': document.getElementById('mesAbono3').value,
         'cuota': document.getElementById('capitalTiempo3').value
     };
+    abono[3] = {
+        'abono': document.getElementById('abono4').value,
+        'mes': document.getElementById('mesAbono4').value,
+        'cuota': document.getElementById('capitalTiempo4').value
+    };
 
 
 // tasa interes
